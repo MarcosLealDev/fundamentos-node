@@ -35,9 +35,8 @@ class TransactionsRepository {
 
   public getBalance(): Balance {
     const balance: Balance = { income: 0, outcome: 0, total: 0 };
-    // const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-    this.transactions.map(transaction => {
+    this.transactions.forEach(transaction => {
       if (transaction.type === 'income') {
         balance.income += transaction.value;
       }
